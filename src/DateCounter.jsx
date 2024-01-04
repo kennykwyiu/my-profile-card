@@ -57,6 +57,17 @@ function Counter() {
           +
         </button>
       </div>
+
+      <p
+        style={{
+          fontFamily: "sans-serif",
+          textAlign: "center",
+          fontSize: "24px",
+          padding: "20px",
+        }}
+      >
+        30 days from today is Wed Jan 21 2024
+      </p>
     </>
   );
 }
