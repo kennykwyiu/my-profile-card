@@ -91,7 +91,7 @@ function SkillList() {
 
 function Skill({ skill }) {
   return (
-    <div className="skill" style={{ background: skill.color }}>
+    <div className="skill" style={{ backgroundColor: skill.color }}>
       <span>{skill.skill}</span>
       <span>
         {skill.level === "beginner" && "👶"}
