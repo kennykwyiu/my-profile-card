@@ -11,6 +11,11 @@ export default function DateCounter() {
 function Counter() {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(1);
+
+  const date = new Date("Jan 5 2024");
+  console.log(date);
+  date.setDate(date.getDate() + count);
+
   return (
     <>
       <div
@@ -66,7 +71,12 @@ function Counter() {
           padding: "20px",
         }}
       >
-        30 days from today is Wed Jan 21 2024
+        {count === 0
+          ? "Today is "
+          : count > 0
+          ? `${count} days from today is `
+          : `${Math.abs(count)} days ago was `}
+        <span>{date.toDateString()}</span>
       </p>
     </>
   );
