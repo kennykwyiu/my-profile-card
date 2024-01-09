@@ -26,19 +26,15 @@ function Counter() {
           padding: "20px",
         }}
       >
-        <button
-          style={{ fontSize: "24px", padding: "10px" }}
-          onClick={() => setStep((c) => c - 1)}
-        >
-          -
-        </button>
+        <input
+          type="range"
+          min={0}
+          max={10}
+          value={step}
+          onChange={(e) => setStep(Number(e.target.value))}
+        />
+
         <span>Step: {step}</span>
-        <button
-          style={{ fontSize: "24px", padding: "10px" }}
-          onClick={() => setStep((c) => c + 1)}
-        >
-          +
-        </button>
       </div>
       <div
         style={{
@@ -54,7 +50,11 @@ function Counter() {
         >
           -
         </button>
-        <span>Count: {count}</span>
+        <input
+          type="text"
+          value={count}
+          onChange={(e) => setCount(Number(e.target.value))}
+        />
         <button
           style={{ fontSize: "24px", padding: "10px" }}
           onClick={() => setCount((c) => c + step)}
