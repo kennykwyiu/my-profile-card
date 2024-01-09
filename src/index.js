@@ -4,10 +4,11 @@ import "./index.css";
 import App from "./App";
 import DateCounter from "./DateCounter";
 import FlashCards from "./FlashCards";
+import DateCounterUpgraged from "./DateCounterUpgraded";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <FlashCards />
+    <DateCounterUpgraged />
   </StrictMode>
 );
