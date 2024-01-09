@@ -12,6 +12,11 @@ function Counter() {
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(1);
 
+  function handleReset() {
+    setCount(0);
+    setStep(1);
+  }
+
   const date = new Date("Jan 5 2024");
   console.log(date);
   date.setDate(date.getDate() + count);
@@ -78,6 +83,18 @@ function Counter() {
           : `${Math.abs(count)} days ago was `}
         <span>{date.toDateString()}</span>
       </p>
+      {count !== 0 || step !== 1 ? (
+        <div
+          style={{
+            fontFamily: "sans-serif",
+            textAlign: "center",
+            fontSize: "24px",
+            padding: "20px",
+          }}
+        >
+          <button onClick={handleReset}>Reset</button>
+        </div>
+      ) : null}
     </>
   );
 }
