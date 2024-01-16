@@ -5,10 +5,11 @@ import App from "./App";
 import DateCounter from "./DateCounter";
 import FlashCards from "./FlashCards";
 import DateCounterUpgraged from "./DateCounterUpgraded";
+import AccordianComponent from "./AccordianComponent";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <DateCounterUpgraged />
+    <AccordianComponent />
   </StrictMode>
 );
