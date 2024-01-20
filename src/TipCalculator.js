@@ -11,12 +11,19 @@ export default function TipCalculatorOutput() {
 
 function TipCalculator() {
   const [billAmount, setBillAmount] = useState("");
+  const [percentage1, setPercentage1] = useState(0);
+  const [percentage2, setPercentage2] = useState(0);
+  const tip = (billAmount * (percentage1 + percentage2)) / 2 / 100;
   return (
     <div>
       <BillInsertor billAmount={billAmount} onSetBillAmount={setBillAmount} />
-      <TipInsertor>How did you like the service?</TipInsertor>
-      <TipInsertor>How did your friend like the service?</TipInsertor>
-      <Output billAmount={billAmount} />
+      <TipInsertor percentage={percentage1} onSelect={setPercentage1}>
+        How did you like the service?
+      </TipInsertor>
+      <TipInsertor percentage={percentage2} onSelect={setPercentage2}>
+        How did your friend like the service?
+      </TipInsertor>
+      <Output billAmount={billAmount} tip={tip} />
       <Reset />
     </div>
   );
@@ -36,11 +43,14 @@ function BillInsertor({ billAmount, onSetBillAmount }) {
   );
 }
 
-function TipInsertor({ children }) {
+function TipInsertor({ children, percentage, onSelect }) {
   return (
     <div>
       <label>{children}</label>
-      <select>
+      <select
+        value={percentage}
+        onChange={(e) => onSelect(Number(e.target.value))}
+      >
         <option value={0}>Dissatisfied (0%)</option>
         <option value={5}>It was okay (5%)</option>
         <option value={10}>It was good (10%)</option>
@@ -50,8 +60,12 @@ function TipInsertor({ children }) {
   );
 }
 
-function Output({ billAmount }) {
-  return <h3>You pay X (${billAmount} + $B tip)</h3>;
+function Output({ billAmount, tip }) {
+  return (
+    <h3>
+      You pay {billAmount + tip} (${billAmount} + ${tip} tip)
+    </h3>
+  );
 }
 
 function Reset() {
