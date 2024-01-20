@@ -31,8 +31,12 @@ function TipCalculator() {
       <TipInsertor percentage={percentage2} onSelect={setPercentage2}>
         How did your friend like the service?
       </TipInsertor>
-      <Output billAmount={billAmount} tip={tip} />
-      <Reset onReset={handleReset} />
+      {billAmount > 0 && (
+        <>
+          <Output billAmount={billAmount} tip={tip} />
+          <Reset onReset={handleReset} />
+        </>
+      )}
     </div>
   );
 }
