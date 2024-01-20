@@ -7,10 +7,11 @@ import FlashCards from "./FlashCards";
 import DateCounterUpgraged from "./DateCounterUpgraded";
 import AccordianComponent from "./AccordianComponent";
 import TipCalculator from "./TipCalculator";
+import TipCalculatorOutput from "./TipCalculator";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <TipCalculator />
+    <TipCalculatorOutput />
   </StrictMode>
 );
