@@ -8,10 +8,11 @@ import DateCounterUpgraged from "./DateCounterUpgraded";
 import AccordianComponent from "./AccordianComponent";
 import TipCalculator from "./TipCalculator";
 import TipCalculatorOutput from "./TipCalculator";
+import TextExpanderApp from "./TextExpanderApp";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <TipCalculatorOutput />
+    <TextExpanderApp />
   </StrictMode>
 );
