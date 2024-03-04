@@ -9,10 +9,12 @@ import AccordianComponent from "./AccordianComponent";
 import TipCalculator from "./TipCalculator";
 import TipCalculatorOutput from "./TipCalculator";
 import TextExpanderApp from "./TextExpanderApp";
+import CurrencyConvertor from "./CurrencyConvertor";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
-    <TextExpanderApp />
+    {/* <TextExpanderApp /> */}
+    <CurrencyConvertor />
   </StrictMode>
 );
