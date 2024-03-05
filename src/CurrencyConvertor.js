@@ -20,6 +20,7 @@ export default function CurrencyConvertor() {
         setConverted(data.rates[toCur]);
         setIsLoading(false);
       }
+      if (fromCur === toCur) return setConverted(amount);
       convert();
     },
     [amount, fromCur, toCur]
