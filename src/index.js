@@ -10,11 +10,13 @@ import TipCalculator from "./TipCalculator";
 import TipCalculatorOutput from "./TipCalculator";
 import TextExpanderApp from "./TextExpanderApp";
 import CurrencyConvertor from "./CurrencyConvertor";
+import Geolocation from "./Geolocation";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
     {/* <TextExpanderApp /> */}
-    <CurrencyConvertor />
+    {/* <CurrencyConvertor /> */}
+    <Geolocation />
   </StrictMode>
 );
