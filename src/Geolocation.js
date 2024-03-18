@@ -3,8 +3,8 @@ import { useState } from "react";
 function useGeolocation() {}
 
 export default function Geolocation() {
-  const [isLoading, setIsLoading] = useState(false);
   const [countClicks, setCountClicks] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
   const [position, setPosition] = useState({});
   const [error, setError] = useState(null);
 
