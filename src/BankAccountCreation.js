@@ -1,3 +1,6 @@
+import { useReducer } from "react";
+import "./index.css";
+
 /*
 INSTRUCTIONS / CONSIDERATIONS:
 
@@ -22,12 +25,35 @@ const initialState = {
   isActive: false,
 };
 
+function reducer(state, action) {
+  switch (action.type) {
+    case "openAccount":
+      return "";
+    case "deposit":
+      return "";
+    case "withdraw":
+      return "";
+    case "requestLoan":
+      return "";
+    case "payLoan":
+      return "";
+    case "cloaseAccount":
+      return "";
+    default:
+      throw new Error("Unkown");
+  }
+}
+
 export default function BankAccountCreation() {
+  const [{ balance, loan, isActive }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
   return (
     <div className="App">
       <h1>useReducer Bank Account</h1>
-      <p>Balance: X</p>
-      <p>Loan: X</p>
+      <p>Balance: {balance}</p>
+      <p>Loan: {loan}</p>
 
       <p>
         <button onClick={() => {}} disabled={false}>
