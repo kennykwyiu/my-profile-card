@@ -11,12 +11,16 @@ import TipCalculatorOutput from "./TipCalculator";
 import TextExpanderApp from "./TextExpanderApp";
 import CurrencyConvertor from "./CurrencyConvertor";
 import Geolocation from "./Geolocation";
+import Sec12CurrencyConverter from "./Sec12CurrencyConverter";
+import BankAccountCreation from "./BankAccountCreation";
 
 const root = createRoot(document.getElementById("root"));
 root.render(
   <StrictMode>
     {/* <TextExpanderApp /> */}
     {/* <CurrencyConvertor /> */}
-    <Geolocation />
+    {/* <Geolocation /> */}
+    {/* <Sec12CurrencyConverter /> */}
+    <BankAccountCreation />
   </StrictMode>
 );
