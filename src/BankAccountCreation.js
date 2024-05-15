@@ -28,11 +28,21 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case "openAccount":
-      return "";
+      return {
+        ...state,
+        balance: 500,
+        isActive: true,
+      };
     case "deposit":
-      return "";
+      return {
+        ...state,
+        balance: state.balance + action.payload,
+      };
     case "withdraw":
-      return "";
+      return {
+        ...state,
+        balance: state.balance - action.payload,
+      };
     case "requestLoan":
       return "";
     case "payLoan":
@@ -56,32 +66,37 @@ export default function BankAccountCreation() {
       <p>Loan: {loan}</p>
 
       <p>
-        <button onClick={() => {}} disabled={false}>
+        <button
+          onClick={() => {
+            dispatch({ type: "openAccount" });
+          }}
+          disabled={isActive}
+        >
           Open account
         </button>
       </p>
       <p>
-        <button onClick={() => {}} disabled={false}>
+        <button onClick={() => {}} disabled={!isActive}>
           Deposit 150
         </button>
       </p>
       <p>
-        <button onClick={() => {}} disabled={false}>
+        <button onClick={() => {}} disabled={!isActive}>
           Withdraw 50
         </button>
       </p>
       <p>
-        <button onClick={() => {}} disabled={false}>
+        <button onClick={() => {}} disabled={!isActive}>
           Request a loan of 5000
         </button>
       </p>
       <p>
-        <button onClick={() => {}} disabled={false}>
+        <button onClick={() => {}} disabled={!isActive}>
           Pay loan
         </button>
       </p>
       <p>
-        <button onClick={() => {}} disabled={false}>
+        <button onClick={() => {}} disabled={!isActive}>
           Close account
         </button>
       </p>
