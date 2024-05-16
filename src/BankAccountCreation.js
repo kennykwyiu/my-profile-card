@@ -76,12 +76,22 @@ export default function BankAccountCreation() {
         </button>
       </p>
       <p>
-        <button onClick={() => {}} disabled={!isActive}>
+        <button
+          onClick={() => {
+            dispatch({ type: "deposit", payload: 150 });
+          }}
+          disabled={!isActive}
+        >
           Deposit 150
         </button>
       </p>
       <p>
-        <button onClick={() => {}} disabled={!isActive}>
+        <button
+          onClick={() => {
+            dispatch({ type: "withdraw", payload: 50 });
+          }}
+          disabled={!isActive}
+        >
           Withdraw 50
         </button>
       </p>
