@@ -58,7 +58,7 @@ function reducer(state, action) {
         loan: 0,
         balance: state.balance - state.loan,
       };
-    case "cloaseAccount":
+    case "closeAccount":
       if (state.loan > 0 || state.balance !== 0) return state;
       return initialState;
     default:
@@ -130,7 +130,7 @@ export default function BankAccountCreation() {
       <p>
         <button
           onClick={() => {
-            dispatch({ type: "cloaseAccount" });
+            dispatch({ type: "closeAccount" });
           }}
           disabled={!isActive}
         >
